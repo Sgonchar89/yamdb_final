@@ -12,8 +12,17 @@ SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
-
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    "localhost",
+    "84.201.164.107",
+    "84.252.142.247",
+    "rachnog.co.vu",
+   # "www.rachnog.co.vu",
+    "127.0.0.1",
+    "[::1]",
+    "testserver",
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
