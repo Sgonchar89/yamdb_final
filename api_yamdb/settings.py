@@ -18,7 +18,7 @@ ALLOWED_HOSTS = [
     "84.201.164.107",
     "84.252.142.247",
     "rachnog.co.vu",
-   # "www.rachnog.co.vu",
+    # "www.rachnog.co.vu",
     "127.0.0.1",
     "[::1]",
     "testserver",
