@@ -7,7 +7,7 @@ load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '/home/sgonchar')
 
 DEBUG = False
 
@@ -58,15 +58,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        'NAME': os.environ.get('DB_NAME', '/home/sgonchar'),
+        'USER': os.environ.get('POSTGRES_USER', '/home/sgonchar'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', '/home/sgonchar'),
+        'HOST': os.environ.get('DB_HOST', '/home/sgonchar'),
+        'PORT': os.environ.get('DB_PORT', '/home/sgonchar'),
     }
 
 }
