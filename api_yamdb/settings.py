@@ -12,7 +12,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '/home/sgonchar')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    os.environ.get('ALLOWED_HOSTS', '/home/sgonchar')
+    os.environ.get('ALLOWED_HOSTS')
 ]
 
 INSTALLED_APPS = [
