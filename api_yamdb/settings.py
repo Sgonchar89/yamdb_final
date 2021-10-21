@@ -8,7 +8,6 @@ load_dotenv()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 DEBUG = False
@@ -16,16 +15,6 @@ DEBUG = False
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOSTS')
 ]
-# ALLOWED_HOSTS = [
-#     "localhost",
-#     "84.201.164.107",
-#     "84.252.142.247",
-#     "rachnog.co.vu",
-#     # "www.rachnog.co.vu",
-#     "127.0.0.1",
-#     "[::1]",
-#     "testserver",
-# ]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -74,15 +63,10 @@ WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': os.environ.get('DB_NAME'),
         'NAME': os.environ.dict['DB_NAME'],
-        # 'USER': os.environ.get('POSTGRES_USER'),
         'USER': os.environ.dict['POSTGRES_USER'],
-        # 'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
         'PASSWORD': os.environ.dict['POSTGRES_PASSWORD'],
-        # 'HOST': os.environ.get('DB_HOST'),
         'HOST': os.environ.dict['DB_HOST'],
-        # 'PORT': os.environ.get('DB_PORT'),
         'PORT': os.environ.dict['DB_PORT'],
     }
 }
