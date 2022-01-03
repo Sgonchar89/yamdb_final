@@ -2,36 +2,35 @@
 
 
 # api_yamdb
-REST API для сервиса YaMDb — базы отзывов о фильмах, книгах и музыке. (Коллективный проект 3 студентов Яндекс.Практикум)
+REST API for YaMDb service - movie, book and music reviews database. (Collective project of 3 Yandex.Practicum students)
 
+## Description
 
-## Описание
+API for YaMDb service.
 
-API для сервиса YaMDb.
+Allows you to work with the following entities:
 
-Позволяет работать со следующими сущностями:
+Reviews
 
-Отзывы 
+Comments on reviews
 
-Коментарии к отзывам
+Users  
 
-Пользователи 
+Categories (types) of works
 
-Категории (типы) произведений
+Genre categories
 
-Категории жанров
+Works (for which users write reviews)
 
-Произведения (на которые пишут отзывы)
+## Running the project via docker
 
-## Запуск проекта через docker
+### Installation
 
-### Установка
-
-#### Сборка и запуск контейнера
+#### Container assembly and startup
 ```bash
 docker-compose up -d --build
 ```
-#### База данных
+#### Database
 ```bash
 docker-compose exec web python manage.py makemigrations --noinput
 ```
@@ -39,50 +38,50 @@ docker-compose exec web python manage.py makemigrations --noinput
 docker-compose exec web python manage.py migrate --noinput
 ```
 
-### Использование
+### Exploitation
 
-#### Создание суперпользователя Django
+#### Creating a Django superuser
 ```bash
 docker-compose exec web python manage.py createsuperuser
 ```
-#### Сбор статических файлов
+#### Collecting static files
 ```bash
 docker-compose exec web python manage.py collectstatic --no-input 
 ```
-#### Импорт данных в .json
+#### Importing data into .json
 ```bash
 docker-compose run web python manage.py loaddata path/to/your/json
 ```
-#### Выключение контейнера
+#### Turning off the container
 ```bash
 docker-compose down
 ```
-#### Удалить все неактивные (остановленные) контейнеры
+#### Deleting all inactive (stopped) containers
 ```bash
 docker container prune
 ```
-#### Удалить в ненужные образы
+#### Removing all unwanted images
 ```bash
 docker image prune
 ```
-#### Описание .env файла 
-Этот файл содержит переменные окружения для работы с базой данных:
+#### Description of the .env file 
+This file contains environment variables for working with the database:
 
-DB_ENGINE=django.db.backends.postgresql - тут указываем, с какой БД работает приложение 
+DB_ENGINE=django.db.backends.postgresql - Here we specify which database the application works with  
 
-DB_NAME=<имя_базы_данных> - тут указываем имя базы данных
+DB_NAME=<database_name> - Here we specify the name of the database
 
-POSTGRES_USER=<логин> - тут указываем логин для подключения к базе данных
+POSTGRES_USER=<postgres_login> - Here you specify the login to connect to the database
 
-POSTGRES_PASSWORD=<пароль> - пароль для подключения к БД 
+POSTGRES_PASSWORD=<postgres_password> - Password to connect to the database 
 
-DB_HOST=db - название сервиса (контейнера)
+DB_HOST=db - Service name (container)
 
-DB_PORT=5432 - порт для подключения к БД 
+DB_PORT=5432 - DB connection port 
 
-## Участники 
-[Sgonchar89](https://github.com/Sgonchar89) - отзывы (Review) и комментарии (Comments): модели и view, эндпойнты, права доступа для запросов. Рейтинги произведений.
+## Participants  
+[Sgonchar89](https://github.com/Sgonchar89) - Review and Comments: models and views, endpoints, access rights for requests. Ratings of works.
 
-[UlianaVo](https://github.com/UlianaVo) - категории (Categories), жанры (Genres) и произведения (Titles): модели, view и эндпойнты для них.
+[UlianaVo](https://github.com/UlianaVo) - Categories, Genres, and Titles: models, views, and endpoints for them.
 
-[LasBazza](https://github.com/LasBazza) - управление пользователями (Auth и Users): система регистрации и аутентификации, права доступа, работа с токеном, система подтверждения e-mail, поля.
+[LasBazza](https://github.com/LasBazza) - User management (Auth and Users): registration and authentication system, access rights, work with token, e-mail confirmation system, fields.
