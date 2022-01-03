@@ -1,6 +1,5 @@
 ![YaMDb workflow](https://github.com/Sgonchar89/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
-API развернут по адресу http://84.252.142.247/api/v1/
 
 # api_yamdb
 REST API для сервиса YaMDb — базы отзывов о фильмах, книгах и музыке. (Коллективный проект 3 студентов Яндекс.Практикум)
