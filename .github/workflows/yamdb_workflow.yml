@@ -62,9 +62,8 @@ jobs:
             stack_file_name: docker-compose.yaml
             passphrase: ${{ secrets.PASSPHRASE }}
             script: |
-              sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final
-              sudo docker-compose stop
-              sudo docker-compose rm web
+              cd yamdb_final
+              rm .env
               # Создаст файл для переменных окружения
               touch .env
               # Наполнит файл переменными окружения из секретов GitHub
@@ -74,6 +73,9 @@ jobs:
               echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
               echo DB_HOST=${{ secrets.DB_HOST }} >> .env
               echo DB_PORT=${{ secrets.DB_PORT }} >> .env
+              sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final
+              sudo docker-compose stop
+              sudo docker-compose rm web
               sudo docker-compose up -d
 
   send_message:
